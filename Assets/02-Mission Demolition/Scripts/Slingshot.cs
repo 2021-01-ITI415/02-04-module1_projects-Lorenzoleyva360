@@ -32,13 +32,14 @@ void OnMouseExit() {
 launchPoint.SetActive (false);
 }
 
-void onMouseDown(){                                          //d
+void OnMouseDown(){                                          //d
    //the player has pressed the mouse button while over slingshot
    aimingMode = true;
    //Instantiate a Projectile
-   projectile = Instantiate( prefabProjectile ) as GameObject;
+   projectile = Instantiate(prefabProjectile) as GameObject;
    // Start it at the launchPoint
    projectile.transform.position = launchPos;
+   projectile.GetComponent<Rigidbody>().isKinematic = true;
    // Set it to isKinematic for now
    projectileRigidbody = projectile.GetComponent<Rigidbody>();
    projectileRigidbody.isKinematic = true;
