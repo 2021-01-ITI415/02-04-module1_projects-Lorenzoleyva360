@@ -81,6 +81,8 @@ projectile.GetComponent<Rigidbody>().isKinematic = false;
 projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
 FollowCam.POI = projectile;
 projectile = null;
+MissionDemolition.ShotFired();
+ProjectileLine.S.poi = projectile;
 }
 }
 }
