@@ -19,26 +19,21 @@ void FixedUpdate () {
 if (POI == null) return; // return if there is no poi
 
 // Get the position of the poi
-Vector3 destination = POI.transform.position;
+//Vector3 destination = POI.transform.position;
 
 Vector3 destination;
-//If there is no poi, return to P:[0,0,0]
 if (POI == null) {
     destination = Vector3.zero;
-} else {
-    //Get the position of the poi
+ }else {
     destination = POI.transform.position;
-    // If poi is a Pojectile, check to see if it's at rest
     if (POI.tag == "Projectile") {
-        //If is is sleeping (that is, not moving)
-        if (POI.GetComponent<Rigidbody>().IsSleeping() ) {
-        //return to default view
-        POI = null;
-        // in the next update
-        return;
-    }
+        if (POI.GetComponent<Rigidbody>().IsSleeping() ){
+            POI = null;
+            return;
+        }
     }
 }
+
 // Limit the x & y to minimum values
 destination.x = Mathf.Max( minXY.x, destination.x );
 destination.y = Mathf.Max( minXY.y, destination.y );
