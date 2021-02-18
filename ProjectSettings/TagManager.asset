@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Apple
   - Projectile
+  - Pick Up
+  - Pick up
   layers:
   - Default
   - TransparentFX
