@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText ()
     {
         countText.text = "Diamond:" + count.ToString ();
-        if (count >= 12)
+        if (count >= 13)
         {
             winText.text = "Winner!";
         }
